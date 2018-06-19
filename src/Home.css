@@ -1,0 +1,27 @@
+.w3-content {
+    background-color: bisque;
+}
+li {
+    list-style: none;
+}
+.heading {
+    text-align: center;
+}
+h2 {
+    color: brown;
+}
+img {
+    border-color: brown;
+    border-radius: 25px;
+    width: 100%;
+    min-height: 200px;
+}
+a {
+    color: darkblue;
+}
+a:hover {
+    color: cornflowerblue;
+}
+a:visited {
+    color: crimson;
+}
