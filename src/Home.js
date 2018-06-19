@@ -72,10 +72,16 @@ export default class Home extends Component {
                        </li>
 
                     ))}
+                    <hr />
 
                 </ul>
 
                 </div> {/* w3-content*/}
+
+                <footer className="w3-container w3-green">
+                       <a className="w3-btn w3-xlarge w3-circlew3-theme-action w3-right w3-red" id="floatbutton">+</a>
+                              <p>&copy; 2018</p>
+                </footer>
 
                 <div className="w3-bar w3-teal">
                      <a href="#" className="w3-bar-item w3-button w3-mobile">Reach Us</a>
