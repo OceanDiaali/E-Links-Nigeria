@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Home.css';
+//import './Home.css';
+import './homescreen.css';
 
 export default class Home extends Component {
 
@@ -33,17 +34,17 @@ export default class Home extends Component {
     render(){
         const { error, isLoaded, articles } = this.state;
         if (error) {
-            return <div>Error: {error.message}</div>;
+            return <div className="status-indicator">Error: {error.message}</div>;
           } else if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <div className="status-indicator">Loading...</div>;
           } else {
 
         return(
-            <div>
+            <div className="body">
 
                 <div className="w3-container w3-teal">
-                    <h1 className="heading">E-Nigeria Now!</h1>
-                    <p className="heading">All the latest entertainment stories that Nigerians love</p>
+                    <h1 className="heading">E-Nigeria LinkUp!</h1>
+                    <p className="heading">Get the LINKS to all the latest entertainment that Nigerians love</p>
                 </div>
                
                
@@ -58,12 +59,13 @@ export default class Home extends Component {
                     <div className="w3-row w3-margin">
 
                        <div className="w3-third">
-                           <img src={article.urlToImage}/>
+                           <img src={article.urlToImage} alt=""/>
                        </div>
 
                        <div className="w3-twothird w3-container">
                        <h2>{article.title}</h2>
-                       <a href={article.url}>{article.url}</a>
+                       <a href={article.url}><button>Link up &raquo;</button></a>
+                       {/*<a href={article.url}>{article.url}</a>*/}
                        </div>
 
                     </div>{/* w3-row w3-margin*/}
@@ -78,14 +80,14 @@ export default class Home extends Component {
 
                 </div> {/* w3-content*/}
 
-                <footer className="w3-container w3-green">
+                {/*<footer className="w3-container w3-green">
                        <a className="w3-btn w3-xlarge w3-circlew3-theme-action w3-right w3-red" id="floatbutton">+</a>
                               <p>&copy; 2018</p>
-                </footer>
+                </footer>*/}
 
                 <div className="w3-bar w3-teal">
-                     <a href="#" className="w3-bar-item w3-button w3-mobile">Reach Us</a>
-                    <a href="https://www.grotisk.com" className="w3-bar-item w3-button w3-mobile">Who is Grotisk?</a>
+                     <a href="https://www.digirealis.com" className="w3-bar-item w3-button w3-mobile">Reach Us</a>
+                    <a href="https://www.digirealis.com" className="w3-bar-item w3-button w3-mobile">About digirealis</a>
                 </div>   
 
             </div>
