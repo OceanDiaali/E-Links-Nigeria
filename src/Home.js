@@ -14,6 +14,16 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
+        //refresh page every 6 mins
+        this.intervalId = setInterval(() => this.loadData(), 36000);
+        this.loadData(); // also load one immediately
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.intervalId);
+    }
+
+    loadData(){
         fetch('https://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=51a2bdde808e4355aeb084e6e0ead725')
         .then(res => res.json())
         .then(
@@ -36,14 +46,14 @@ export default class Home extends Component {
         if (error) {
             return <div className="status-indicator">Error: {error.message}</div>;
           } else if (!isLoaded) {
-            return <div className="status-indicator">Loading...</div>;
+            return <div className="status-indicator">Cranking up the turbines..</div>;
           } else {
 
         return(
             <div className="body">
 
                 <div className="w3-container w3-teal">
-                    <h1 className="heading">E-Nigeria LinkUp!</h1>
+                    <h1 className="heading">E-Links Nigeria!</h1>
                     <p className="heading">Get the LINKS to all the latest entertainment that Nigerians love</p>
                 </div>
                
@@ -59,11 +69,13 @@ export default class Home extends Component {
                     <div className="w3-row w3-margin">
 
                        <div className="w3-third">
-                           <img src={article.urlToImage} alt=""/>
+                           <img src={article.urlToImage} alt="E-Links Nigeria"/>
                        </div>
 
                        <div className="w3-twothird w3-container">
                        <h2>{article.title}</h2>
+                       <h4>{article.description}</h4>
+                       <h5>Source - "{article.source.name}"</h5>
                        <a href={article.url}><button>Link up &raquo;</button></a>
                        {/*<a href={article.url}>{article.url}</a>*/}
                        </div>
