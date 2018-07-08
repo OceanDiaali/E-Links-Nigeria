@@ -69,7 +69,7 @@ export default class Home extends Component {
                     <div className="w3-row w3-margin">
 
                        <div className="w3-third">
-                           <img src={article.urlToImage} alt="E-Links Nigeria"/>
+                           <img src={article.urlToImage} alt={article.title}/>
                        </div>
 
                        <div className="w3-twothird w3-container">
