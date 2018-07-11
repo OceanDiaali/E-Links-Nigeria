@@ -4,6 +4,12 @@ body {
 h1, p {
     color: blanchedalmond;
 }
+
+a{
+    text-decoration: none;
+}
+
+
 .w3-content {
     padding: 10px 32px 10px 2px;
     background-color: rgb(225, 241, 226);

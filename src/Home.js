@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import './Home.css';
+
 import './homescreen.css';
 
 export default class Home extends Component {
@@ -73,7 +73,7 @@ export default class Home extends Component {
                        </div>
 
                        <div className="w3-twothird w3-container">
-                       <h2>{article.title}</h2>
+                       <h2><a href={article.url}>{article.title}</a></h2>
                        <h4>{article.description}</h4>
                        <h5>Source - "{article.source.name}"</h5>
                        <a href={article.url}><button>Link up &raquo;</button></a>
